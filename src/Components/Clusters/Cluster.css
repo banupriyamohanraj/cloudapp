@@ -1,0 +1,12 @@
+.formComponent {
+  margin: 30px;
+}
+
+.container-fluid {
+  background-color: white;
+  height: 100vh;
+  padding: 20px;
+}
+.col {
+  padding: 5px;
+}

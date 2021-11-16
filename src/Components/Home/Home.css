@@ -1,0 +1,46 @@
+.Home__Container {
+  background-color: rgb(255, 255, 255);
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.card {
+  text-align: start !important;
+  /* box-shadow: 1px 1px 1px 1px mintcream; */
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+/* .row {
+  margin-top: 2rem;
+} */
+
+.greendot {
+  height: 15px;
+  width: 15px;
+  background-color: lawngreen;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.orangedot {
+  height: 15px;
+  width: 15px;
+  background-color: orange;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.reddot {
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.modal-header {
+  align-items: flex-end !important;
+  align-self: flex-end;
+}
