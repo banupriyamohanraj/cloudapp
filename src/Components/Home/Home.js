@@ -337,7 +337,7 @@ const Chart = () => (
               <h5 class="card-title">  </h5>
               <p class="card-text">
                 <div class="list-group">
-                  {cluster ?cluster.map((obj) => {
+                  {cluster.map((obj) => {
                     return (
                       <Link
                         to={`/cluster/${obj.clusterName}`}
@@ -346,9 +346,7 @@ const Chart = () => (
                         Cluster Region - {obj.clusterRegion}
                       </Link>
                     );
-                  }) :<div class="spinner-grow text-dark" role="status">
-                  <span class="sr-only">Loading...</span>
-                </div>
+                  }) 
                 
                 
                 }
@@ -480,7 +478,7 @@ const Chart = () => (
               <h5 class="card-title">  </h5>
               <p class="card-text">
                 <div class="list-group">
-                  { cluster ? cluster.map((obj) => {
+                  {  cluster.map((obj) => {
                     return (<>
                     {
                       obj.machines.map((c,i)=> <li
@@ -496,10 +494,7 @@ const Chart = () => (
                       )} 
                      
                     </>);
-                  }) : <div class="spinner-grow text-dark" role="status">
-                  <span class="sr-only">Loading...</span>
-                </div>
-                
+                  }) 
                 }
                 </div>
               </p>
@@ -508,298 +503,7 @@ const Chart = () => (
        </div>
        </div>
      
-{/* 
-      <div className="row  p-4">
-        <div className="col-6">
-          <div class="card">
-            <h5 class="card-header">welcome Admin!!</h5>
-            <div class="card-body">
-              <div className="row">
-                <div className="col-3">
-                <div className="card text-center p-1">
-                  <div className="card-title text-center"><h1>{cluster ? cluster.length : 0}</h1></div>
-                  <div className="card-body text-center"><i class="fa fa-cloud" aria-hidden="true"></i>&ensp;Clusters</div>
-                  </div>
-                </div>
-                <div className="col-3">
-                <div className="card text-center p-1">
-                  <div className="card-title text-center"><h1>{start ? start.length: 0}</h1></div>
-                  <div className="card-body text-center"><span class="greendot"></span>&emsp;Active </div>
-                  </div>
-                </div>
-                <div className="col-3">
-                <div className="card text-center p-1">
-                  <div className="card-title text-center"><h1>{reboot ? reboot.length :0}</h1></div>
-                  <div className="card-body text-center"><span class="orangedot"></span>&emsp;Reboot </div>
-                  </div>
-                </div>
-                <div className="col-3">
-                <div className="card text-center p-1">
-                  <div className="card-title text-center"><h1> {stop ? stop.length : 0}</h1></div>
-                  <div className="card-body text-center"> <span class="reddot"></span>&emsp;Inactive </div>
-                  </div>
-                </div>
-               
-              </div>
-            </div>
-          </div>
-         <br/>
-         <Chart/>
-         <br/>
-         <div class="card">
-            <h5 class="card-header">
-              Clusters{" "}
-              <button
-                type="button"
-                class="btn btn-success float-right "
-                data-toggle="modal"
-                data-target="#exampleModal"
-                data-whatever="@mdo"
-              >
-                New Cluster
-              </button>
-            </h5>
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title " id="exampleModalLabel">
-                      New Cluster
-                    </h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form >
-                      <div class="form-group">
-                        <label for="cluster-name" class="col-form-label">
-                          Cluster Name:
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cluster-name"
-                          placeholder="eg..C1"
-                          onChange={(e)=>setclusterName(e.target.value)}
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="cluster-region" class="col-form-label">
-                          Cluster Region:
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cluster-region"
-                          placeholder="eg..us-east1"
-                          onChange={(e)=>setclusterRegion(e.target.value)}
-                        ></input>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" class="btn btn-primary" onClick={CreatingClusterSubmit}>
-                      create cluster
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">  </h5>
-              <p class="card-text">
-                <div class="list-group">
-                  {cluster ?cluster.map((obj) => {
-                    return (
-                      <Link
-                        to={`/cluster/${obj.clusterName}`}
-                        class="list-group-item list-group-item-action list-group-item-light">
-                        Cluster Name - <strong>{obj.clusterName} </strong><br/>
-                        Cluster Region - {obj.clusterRegion}
-                      </Link>
-                    );
-                  }) :<div class="spinner-grow text-dark" role="status">
-                  <span class="sr-only">Loading...</span>
-                </div>
-                
-                
-                }
-                </div>
-              </p>
-            </div>
-          </div>
-         
-        </div>
-        <div className="col-6">
-       
-          
-     
-     
-          <div class="card">
-            <h5 class="card-header">
-              Machines{" "}
-              <button
-                type="button"
-                class="btn btn-success float-right"
-                data-toggle="modal"
-                data-target="#exampleModal1"
-                data-whatever="@mdo"
-              
-              >
-                New Machine
-              </button>
-            </h5>
-            <div
-              class="modal fade"
-              id="exampleModal1"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                      New Machine
-                    </h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="cluster-name" class="col-form-label">
-                          Choose Cluster :
-                        </label>
 
-                        <select id="cluster-name" class="form-control" onChange={(e)=>setchooseclusterName(e.target.value)}>
-                          <option selected>Choose...</option>
-                          {cluster.map((obj) => {
-                            return <option>{obj.clusterName}</option>;
-                          })}
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="machine-name" class="col-form-label">
-                          Machine Name
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="machine-name"
-                          placeholder="eg..M1"
-                          onChange={(e)=>setmachineName(e.target.value)}
-                        ></input>
-                      </div>
-                      <div class="form-group">
-                        <label for="ipaddress" class="col-form-label">
-                          ip address
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="ipaddress"
-                          placeholder="eg..192.00.01.7"
-                          onChange={(e)=>setipaddress(e.target.value)}
-                        ></input>
-                      </div>
-                      <div class="form-group">
-                        <label for="instancetype" class="col-form-label">
-                          instance type
-                        </label>
-                        <select id="instancetype" class="form-control" onChange={(e)=>setinstancetype(e.target.value)}>
-                          <option selected>Choose...</option>
-                          <option>EC2</option>
-                          <option>EC3</option>
-                          <option>S3</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="tag" class="col-form-label">
-                          tag
-                        </label>
-                        <select id="tag" class="form-control" onChange={(e)=>setTag(e.target.value)}>
-                          <option selected>Choose...</option>
-                          <option>start</option>
-                          <option>reboot</option>
-                          <option>stop</option>
-                        </select>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" class="btn btn-primary" onClick={CreateMachineSubmit}>
-                      create machine
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-body">
-              <h5 class="card-title">  </h5>
-              <p class="card-text">
-                <div class="list-group">
-                  { cluster ? cluster.map((obj) => {
-                    return (<>
-                    {
-                      obj.machines.map((c,i)=> <a
-                      href="#"
-                      class="list-group-item list-group-item-action list-group-item-light">
-
-
-                       Machine Name - {c.name} <br/>
-                       IP Address - {c.ipaddress}<br/>
-                    
-                      
-                    </a>
-                      )} 
-                     
-                    </>);
-                  }) : <div class="spinner-grow text-dark" role="status">
-                  <span class="sr-only">Loading...</span>
-                </div>
-                
-                }
-                </div>
-              </p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div> */}
       </div>
   );
 }
