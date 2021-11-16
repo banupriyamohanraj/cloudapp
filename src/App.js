@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar/Nabar";
 import Clusters from "./Components/Clusters/Clusters";
-import Machines from "./Components/Machines/Machines";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,7 +18,7 @@ function App() {
         <Routes>
              <Route path="/" element={<Home/>} exact={true}></Route>
              <Route path="/cluster/:clusterName" element={<Clusters/>} exact={true}></Route>
-             <Route path="/machine/:machineName" element={<Machines/>} exact={true}></Route>
+             
       </Routes>
       </div>
     </Router>
