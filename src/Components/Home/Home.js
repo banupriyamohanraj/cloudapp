@@ -40,7 +40,7 @@ let[tag,setTag] = useState([]);
   //getting full cluster details
   useEffect(() => {
     async function fetchData() {
-      await fetch('http://nodejs-restapi-backend.herokuapp.com/')
+      await fetch('https://nodejs-restapi-backend.herokuapp.com/cluster/')
       .then(res => {
         return res.json();
     }).then((data) => {
@@ -60,7 +60,7 @@ let[tag,setTag] = useState([]);
   useEffect(() => {
     async function fetchstartData() {
       let data = await fetch(
-        "http://nodejs-restapi-backend.herokuapp.com/machines/start"
+        "https://nodejs-restapi-backend.herokuapp.com/machines/start"
       );
       let startdata = await data.json();
 
@@ -75,7 +75,7 @@ let[tag,setTag] = useState([]);
   useEffect(() => {
     async function fetchrebootData() {
       let data = await fetch(
-        "http://nodejs-restapi-backend.herokuapp.com/machines/reboot"
+        "https://nodejs-restapi-backend.herokuapp.com/machines/reboot"
       );
       let rebootdata = await data.json();
 
@@ -90,7 +90,7 @@ let[tag,setTag] = useState([]);
   useEffect(() => {
     async function fetchstopData() {
       let data = await fetch(
-        "http://nodejs-restapi-backend.herokuapp.com/machines/stop"
+        "https://nodejs-restapi-backend.herokuapp.com/machines/stop"
       );
       let stopdata = await data.json();
 
@@ -208,7 +208,7 @@ const Chart = () => (
 
 
 
-  return (
+  return ( !cluster ? <p>Loading..</p>: 
     <div className="Home__Container  ">
      <div className="row p-4">
        <div className="col-md-6">
